@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminEquipos13Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminJugadores22Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,40 +25,34 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "equipos";
+			$this->table = "jugadores";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"EQUIPO","name"=>"idEquipo"];
-			$this->col[] = ["label"=>"NOMBRES","name"=>"nombres"];
-			$this->col[] = ["label"=>"APELLIDOS","name"=>"apellidos"];
-			$this->col[] = ["label"=>"CEDULA","name"=>"cedula"];
-			$this->col[] = ["label"=>"TELEFONO","name"=>"telefono"];
-			$this->col[] = ["label"=>"CORREO","name"=>"correo"];
-			$this->col[] = ["label"=>"OBSERVACIONES","name"=>"observaciones"];
+			$this->col[] = ["label"=>"Nombre","name"=>"nombre"];
+			$this->col[] = ["label"=>"Equipo","name"=>"equipos_id","join"=>"equipos,nombre"];
+			$this->col[] = ["label"=>"Cedula","name"=>"cedula"];
+			$this->col[] = ["label"=>"Telefono","name"=>"telefono"];
+			$this->col[] = ["label"=>"Correo","name"=>"correo"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'EQUIPO','name'=>'idEquipo','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'NOMBRES','name'=>'nombres','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'APELLIDOS','name'=>'apellidos','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CEDULA','name'=>'cedula','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'TELEFONO','name'=>'telefono','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CORREO','name'=>'correo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'OBSERVACIONES','name'=>'observaciones','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nombre','name'=>'nombre','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Cedula','name'=>'cedula','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Telefono','name'=>'telefono','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Correo','name'=>'correo','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Equipos Id','name'=>'equipos_id','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'equipos,nombre'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"IdEquipo","name"=>"idEquipo","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Nombres","name"=>"nombres","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Apellidos","name"=>"apellidos","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Cedula","name"=>"cedula","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Telefono","name"=>"telefono","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Correo","name"=>"correo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Observaciones","name"=>"observaciones","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ['label'=>'Nombre','name'=>'nombre','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Cedula','name'=>'cedula','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Telefono','name'=>'telefono','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Correo','name'=>'correo','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Equipos Id','name'=>'equipos_id','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'equipos,nombre'];
 			# OLD END FORM
 
 			/* 

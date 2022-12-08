@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEquipocorrectsTable extends Migration
+class CreateVideojuegosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateEquipocorrectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipocorrects', function (Blueprint $table) {
+        Schema::create('videojuegos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('observacion');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateEquipocorrectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipocorrects');
+        Schema::dropIfExists('videojuegos');
     }
 }
