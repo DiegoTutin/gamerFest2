@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminHorariosController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminHorarios24Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -30,32 +30,32 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"VIDEOJUEGO","name"=>"idvideojuego"];
-			$this->col[] = ["label"=>"AULA","name"=>"idaula"];
-			$this->col[] = ["label"=>"FECHA","name"=>"fecha"];
-			$this->col[] = ["label"=>"HORA INICIO","name"=>"iniciojuego"];
-			$this->col[] = ["label"=>"HORA FIN","name"=>"finjuego"];
-			$this->col[] = ["label"=>"OBSERVACIONES","name"=>"observaciones"];
+			$this->col[] = ["label"=>"Videojuegos Id","name"=>"videojuegos_id","join"=>"videojuegos,nombre"];
+			$this->col[] = ["label"=>"Aulas Id","name"=>"aulas_id","join"=>"aulas,Nombre"];
+			$this->col[] = ["label"=>"Fecha","name"=>"fecha"];
+			$this->col[] = ["label"=>"Tiempo Inicio","name"=>"tiempo_inicio"];
+			$this->col[] = ["label"=>"Tiempo Fin","name"=>"tiempo_fin"];
+			$this->col[] = ["label"=>"Observaciones","name"=>"Observaciones"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'VIDEOJUEGO','name'=>'idvideojuego','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'AULA','name'=>'idaula','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'FECHA','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'HORA INICIO','name'=>'iniciojuego','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'HORA FIN','name'=>'finjuego','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'OBSERVACIONES','name'=>'observaciones','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tiempo Inicio','name'=>'tiempo_inicio','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tiempo Fin','name'=>'tiempo_fin','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Observaciones','name'=>'Observaciones','type'=>'textarea','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Videojuegos Id','name'=>'videojuegos_id','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'videojuegos,nombre'];
+			$this->form[] = ['label'=>'Aulas Id','name'=>'aulas_id','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'aulas,Nombre'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Idvideojuego","name"=>"idvideojuego","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Idaula","name"=>"idaula","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Fecha","name"=>"fecha","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
-			//$this->form[] = ["label"=>"Iniciojuego","name"=>"iniciojuego","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
-			//$this->form[] = ["label"=>"Finjuego","name"=>"finjuego","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
-			//$this->form[] = ["label"=>"Observaciones","name"=>"observaciones","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ['label'=>'Tiempo Inicio','name'=>'tiempo_inicio','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tiempo Fin','name'=>'tiempo_fin','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Observaciones','name'=>'Observaciones','type'=>'textarea','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Videojuegos Id','name'=>'videojuegos_id','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'videojuegos,nombre'];
+			//$this->form[] = ['label'=>'Aulas Id','name'=>'aulas_id','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'aulas,Nombre'];
 			# OLD END FORM
 
 			/* 

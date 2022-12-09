@@ -15,12 +15,6 @@ class CreateHorariosTable extends Migration
     {
         Schema::create('horarios', function (Blueprint $table) {
             $table->id();
-            $table->integer('idvideojuego');
-            $table->integer('idaula');
-            $table->date('fecha');
-            $table->time('iniciojuego');
-            $table->time('finjuego');
-            $table->text('observaciones');
             $table->timestamps();
         });
     }
